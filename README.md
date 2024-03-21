@@ -15,6 +15,7 @@ View a summary of total expenses and converted total.
 - **Vite:** A fast development server and bundler tool for modern web development.<br>
 - **ESLint:** A tool for identifying and reporting on patterns found in JavaScript code.<br>
 - **PostCSS and Autoprefixer:** Tools for transforming CSS with JavaScript plugins.<br>
+- **[AwesomeAPI](https://docs.awesomeapi.com.br/api-de-moedas)**: An API for currency exchange rates.
 
 ### Getting Started
 To run this application locally, follow these steps:
