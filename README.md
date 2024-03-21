@@ -24,16 +24,20 @@ Clone this repository to your local machine.
 Navigate to the project directory in your terminal.
 Install dependencies using npm or yarn:
 
- >npm install <br> # or <br>
-> yarn install
-
+```bash
+npm install
+# or 
+yarn install
+```
 Start the development server:
 
 
 
->npm run dev <br># or<br>
->yarn dev
-
+```bash
+npm run dev
+# or
+yarn dev
+```
 Open your web browser and visit http://localhost:5173 to view the application.
 
 ### Available Scripts.
