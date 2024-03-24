@@ -9,6 +9,9 @@ View a summary of total expenses and converted total.
 ### Technologies Used
 - **React:**  A JavaScript library for building user interfaces.<br>
 - **React Router:** A library for routing in React applications.<br>
+- **React Three:** A JavaScript library for creating and manipulating 3D scenes in React applications.<br>
+- **React Three Fiber:** A React renderer for three.js, allowing the creation of 3D scenes using React components.<br>
+- **React Three Drei:** A collection of useful helpers and abstractions for React Three Fiber, simplifying the creation of complex 3D scenes.<br>
 - **Redux:** A predictable state container for JavaScript apps.<br>
 - **Redux Thunk:** Middleware for Redux to handle asynchronous logic.<br>
 - **Tailwind CSS:** A utility-first CSS framework for styling web applications.<br>
