@@ -18,7 +18,7 @@ class Header extends Component {
   render() {
     const { email, expenses } = this.props;
     return (
-      <header className="rounded-md bg-primary text-white py-4 px-6 flex justify-between items-center">
+      <header className="rounded-md border-2 border-gray-800 bg-gradient-to-r from-gray-800 via-gray-900 to-slate-900 text-white py-4 px-6 flex justify-between items-center">
         <p data-testid="email-field" className="text-lg font-bold">{`Email: ${email}`}</p>
         <div className="text-lg font-bold">
           <span className="mr-2">Despesa Total:</span>

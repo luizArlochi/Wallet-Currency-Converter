@@ -12,6 +12,7 @@ class WalletForm extends Component {
     currency: 'USD',
     method: 'Dinheiro',
     tag: 'Alimentação',
+    error: '',
   };
 
   componentDidMount() {
@@ -24,9 +25,22 @@ class WalletForm extends Component {
     this.setState({ [name]: value });
   };
 
+  validateFields = () => {
+    const { value, description } = this.state;
+    if (!value.trim() || !description.trim()) {
+      this.setState({ error: 'Por favor, preencha todos os campos.' });
+      return false;
+    }
+    return true;
+  };
+
   handleSave = async () => {
     const { dispatch } = this.props;
     const { id, value, description, currency, method, tag } = this.state;
+
+    if (!this.validateFields()) {
+      return;
+    }
 
     const exchangeCall = await currencyApi();
 
@@ -48,14 +62,15 @@ class WalletForm extends Component {
       currency: 'USD',
       method: 'Dinheiro',
       tag: 'Alimentação',
+      error: '',
     }));
   };
 
   render() {
-    const { value, description, currency, method, tag } = this.state;
+    const { value, description, currency, method, tag, error } = this.state;
     const { currencies } = this.props;
     return (
-        <div className="bg-gray-500 rounded-md shadow-md p-6">
+      <div className="bg-gray-950 bg-opacity-95 rounded-md shadow-md p-6">
         <form className="inline-flex flex-col gap-4">
           <label htmlFor="value-input">
             Valor:
@@ -67,9 +82,10 @@ class WalletForm extends Component {
               data-testid="value-input"
               placeholder="Valor"
               onChange={this.handleChange}
+              className="rounded-md border m-2 border-gray-500"
             />
           </label>
-      
+
           <label htmlFor="description-input">
             Descrição:
             <input
@@ -80,9 +96,12 @@ class WalletForm extends Component {
               data-testid="description-input"
               placeholder="Descrição"
               onChange={this.handleChange}
+              className="rounded-md border m-2 border-gray-500"
             />
           </label>
-      
+
+          {error && <p className="text-red-500">{error}</p>}
+
           <label htmlFor="currency-input">
             Selecione a moeda:
             <select
@@ -91,6 +110,7 @@ class WalletForm extends Component {
               id="currency-input"
               data-testid="currency-input"
               onChange={this.handleChange}
+              className="rounded-md m-2 border border-gray-600"
             >
               {currencies.map((currencie, index) => (
                 <option key={index} value={currencie}>
@@ -99,7 +119,7 @@ class WalletForm extends Component {
               ))}
             </select>
           </label>
-      
+
           <label htmlFor="method-input">
             Método de pagamento:
             <select
@@ -108,13 +128,14 @@ class WalletForm extends Component {
               id="method-input"
               data-testid="method-input"
               onChange={this.handleChange}
+              className="rounded-md m-2 border border-gray-600"
             >
               <option>Dinheiro</option>
               <option>Cartão de crédito</option>
               <option>Cartão de débito</option>
             </select>
           </label>
-      
+
           <label htmlFor="tag-input">
             Categoria:
             <select
@@ -123,6 +144,7 @@ class WalletForm extends Component {
               id="tag-input"
               data-testid="tag-input"
               onChange={this.handleChange}
+              className="rounded-md m-2 border border-gray-600"
             >
               <option>Alimentação</option>
               <option>Lazer</option>
@@ -131,13 +153,12 @@ class WalletForm extends Component {
               <option>Saúde</option>
             </select>
           </label>
-      
-          <button type="button" onClick={this.handleSave} className="bg-primary text-white py-2 px-4 rounded-md">
+
+          <button type="button" onClick={this.handleSave} className="bg-green-900 text-white py-2 px-4 rounded-md border border-blue-500">
             Adicionar despesa
           </button>
         </form>
       </div>
-      
     );
   }
 }
