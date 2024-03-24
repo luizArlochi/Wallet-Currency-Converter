@@ -36,20 +36,20 @@ class Login extends React.Component {
   render() {
     const { email, password, buttonDisabled } = this.state;
     return (
-      <div className={`bg-gray-900 min-h-screen flex items-center justify-center ${styles.padding}`}>
-        <form className="bg-white rounded-lg shadow-lg p-8">
-          <label htmlFor="email-input" className="block text-gray-400 mb-2">Email:</label>
+      <div className={`bg-primary min-h-screen flex items-center justify-center ${styles.padding}`}>
+        <form className="bg-gray-800 rounded-lg shadow-lg p-8">
+          <label htmlFor="email-input" className="block mb-2">Email:</label>
           <input
             type="email"
             name="email"
             id="email-input"
-            placeholder="email@example.com"
+            placeholder="Insert your email"
             data-testid="email-input"
             value={email}
             onChange={this.handleChange}
-            className="border border-red-300 px-4 py-2 mb-4 w-full rounded-md focus:outline-none focus:border-primary"
+            className="border border-red-300 px-4 py-2 mb-4 w-full rounded-md focus:border-primary"
           />
-          <label htmlFor="password-input" className="block text-gray-400 mb-2">Password:</label>
+          <label htmlFor="password-input" className="block mb-2">Password:</label>
           <input
             type="password"
             name="password"
@@ -65,7 +65,7 @@ class Login extends React.Component {
             type="button"
             disabled={buttonDisabled}
             onClick={this.handleSubmit}
-            className={`bg-primary text-white px-4 py-2 rounded-md focus:outline-none ${buttonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`bg-green-900 text-white px-4 py-2 rounded-md focus:outline-none ${buttonDisabled ? 'opacity-20 cursor-not-allowed' : ''}`}
           >
             Entrar
           </button>
