@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Coin = () => {
-  const computer = useGLTF("./coin/scene.gltf");
+  const coin = useGLTF("./coin/scene.gltf");
 
   return (
     <mesh>
@@ -21,7 +21,7 @@ const Coin = () => {
       />
       <pointLight intensity={5} />
       <primitive
-        object={computer.scene}
+        object={coin.scene}
         scale={6}
         position={[-3, -4, 5]}
         rotation={[-0.01, -0.01, -0.01]}
