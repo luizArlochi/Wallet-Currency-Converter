@@ -10,5 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}> {/* Envolve o App com o Provider e passe o armazenamento Redux */}
       <App />
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
